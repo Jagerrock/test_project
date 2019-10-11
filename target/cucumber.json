@@ -1,0 +1,175 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "start_timestamp": "2019-08-08T15:32:28.593Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1966229700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ObjectCreationStepdefs.setUp()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Article Creation",
+        "description": "",
+        "id": "object-creation;article-creation",
+        "after": [
+          {
+            "result": {
+              "duration": 707713500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ObjectCreationStepdefs.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4670752400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Navigation to the project",
+            "match": {
+              "location": "ObjectCreationStepdefs.navigationToTheProject()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2884606200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "You fill in all the data and click OK",
+            "match": {
+              "location": "ObjectCreationStepdefs.youFillInAllTheDataAndClickOK(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Article has been created by me"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 412735100,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "The object has been created",
+            "match": {
+              "location": "ObjectCreationStepdefs.theObjectHasBeenCreated()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Test1"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2019-08-08T15:32:39.267Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1263099400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ObjectCreationStepdefs1.setUp()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Article Creation1",
+        "description": "",
+        "id": "object-creation;article-creation1",
+        "after": [
+          {
+            "result": {
+              "duration": 694818100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ObjectCreationStepdefs1.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4958979400,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Navigation to the project1",
+            "match": {
+              "location": "ObjectCreationStepdefs1.navigationToTheProject()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2896318200,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "You fill in all the data and click OK1",
+            "match": {
+              "location": "ObjectCreationStepdefs1.youFillInAllTheDataAndClickOK(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Article has been created by me"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 398179200,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "The object has been created1",
+            "match": {
+              "location": "ObjectCreationStepdefs1.theObjectHasBeenCreated()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Test2"
+          }
+        ]
+      }
+    ],
+    "name": "Object Creation",
+    "description": "",
+    "id": "object-creation",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/ObjectCreation.feature",
+    "tags": []
+  }
+]
