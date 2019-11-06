@@ -1,18 +1,15 @@
 package creation;
 
-import commonmethods.CommonMethods;
-import objects.CommonBtns;
-import objects.journalizedcase.JournalizedCaseProperties;
+import pageobjects.commonmethods.CommonMethods;
+import pageobjects.objects.CommonBtns;
+import pageobjects.objects.journalizedcase.JournalizedCaseProperties;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import search.CommonSearchBtnsAndFields;
-import search.JournalizedCase;
-import topmenu.TopMenu;
-import authentication.Authentication;
+import pageobjects.topmenu.TopMenu;
+import pageobjects.authentication.Authentication;
 import static org.junit.Assert.fail;
 
 public class CreateJournalizedCase {

@@ -1,18 +1,13 @@
 package creation;
 
-import commonmethods.CommonMethods;
+import pageobjects.commonmethods.CommonMethods;
 import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import objects.article.ArticleProperties;
-import objects.CommonBtns;
-import topmenu.TopMenu;
-import authentication.Authentication;
-
-import java.lang.ref.SoftReference;
+import pageobjects.objects.article.ArticleProperties;
+import pageobjects.objects.CommonBtns;
+import pageobjects.topmenu.TopMenu;
+import pageobjects.authentication.Authentication;
 
 import static org.junit.Assert.fail;
 

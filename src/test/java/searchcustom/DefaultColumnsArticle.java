@@ -1,16 +1,15 @@
 package searchcustom;
 
-import administration.search.*;
-import authentication.Authentication;
-import commonmethods.CommonMethods;
-import io.cucumber.java.eo.Se;
+import pageobjects.administration.search.*;
+import pageobjects.authentication.Authentication;
+import pageobjects.commonmethods.CommonMethods;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import topmenu.TopMenu;
+import pageobjects.topmenu.TopMenu;
 
 
 import static org.junit.Assert.fail;

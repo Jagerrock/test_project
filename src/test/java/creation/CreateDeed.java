@@ -1,17 +1,16 @@
 package creation;
 
-import commonmethods.CommonMethods;
-import objects.CommonBtns;
-import objects.deed.DeedProperties;
+import pageobjects.commonmethods.CommonMethods;
+import pageobjects.objects.CommonBtns;
+import pageobjects.objects.deed.DeedProperties;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import topmenu.TopMenu;
-import registration.Registration;
-import authentication.Authentication;
+import pageobjects.topmenu.TopMenu;
+import pageobjects.registration.Registration;
+import pageobjects.authentication.Authentication;
 
 import static org.junit.Assert.fail;
 

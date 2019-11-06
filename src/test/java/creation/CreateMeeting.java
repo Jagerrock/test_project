@@ -1,17 +1,16 @@
 package creation;
 
-import commonmethods.CommonMethods;
-import objects.CommonBtns;
-import objects.meeting.MeetingProperties;
-import meetings.Meetings;
+import pageobjects.commonmethods.CommonMethods;
+import pageobjects.objects.CommonBtns;
+import pageobjects.objects.meeting.MeetingProperties;
+import pageobjects.meetings.Meetings;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import topmenu.TopMenu;
-import authentication.Authentication;
+import pageobjects.topmenu.TopMenu;
+import pageobjects.authentication.Authentication;
 
 import static org.junit.Assert.fail;
 

@@ -1,17 +1,16 @@
 package searchcustom;
 
-import administration.search.Search;
-import administration.search.SearchCase;
-import administration.search.SearchCompany;
-import authentication.Authentication;
-import commonmethods.CommonMethods;
+import pageobjects.administration.search.Search;
+import pageobjects.administration.search.SearchCompany;
+import pageobjects.authentication.Authentication;
+import pageobjects.commonmethods.CommonMethods;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import topmenu.TopMenu;
+import pageobjects.topmenu.TopMenu;
 
 import static org.junit.Assert.fail;
 

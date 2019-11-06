@@ -1,16 +1,15 @@
 package creation;
 
-import commonmethods.CommonMethods;
-import objects.CommonBtns;
-import objects.document.DocumentProperties;
+import pageobjects.commonmethods.CommonMethods;
+import pageobjects.objects.CommonBtns;
+import pageobjects.objects.document.DocumentProperties;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import clipboard.ClipBoard;
-import authentication.Authentication;
+import pageobjects.clipboard.ClipBoard;
+import pageobjects.authentication.Authentication;
 
 import static org.junit.Assert.fail;
 
