@@ -15,6 +15,7 @@ import pageobjects.objects.meeting.MeetingProperties;
 import pageobjects.objects.participant.ParticipantProperties;
 import pageobjects.objects.usualcase.CaseProperties;
 import pageobjects.search.Document;
+import pageobjects.search.ReceiversList;
 
 public class ObjectSteps extends BaseTest {
     CommonMethods commonMethods = new CommonMethods(getDriver());
@@ -29,6 +30,7 @@ public class ObjectSteps extends BaseTest {
     MailProperties mailElements = new MailProperties(getDriver());
     MeetingProperties meetingElements = new MeetingProperties(getDriver());
     ParticipantProperties participantElements = new ParticipantProperties(getDriver());
+    ReceiversList rlElements = new ReceiversList(getDriver());
 
     public void fillInArticleDataAndSave(){
         articleElements.sendKeysarticleDesignation("Article_is_created_by_me");
@@ -155,6 +157,17 @@ public class ObjectSteps extends BaseTest {
     public void fillInMeetingParticipantDataAndSave(){
         participantElements.sendKeysfirstName("Oleh");
         participantElements.sendKeyslastNmae("Feshchenko");
+        commonBtns.enablestatusNotSaved();
+        commonBtns.clickbtnApply();
+        commonBtns.enablestatusSaved();
+        commonBtns.clickbtnOk();
+        commonMethods.closePage();
+        commonMethods.childWindowCloseCheck();
+    }
+
+    public void fillInReceiversListDataAndSave(){
+        rlElements.sendKeysReceiversListTitle("Recievers_list_creation_and_search_by_Oleh");
+        rlElements.sendKeysReceiversListDescription("WebDriver_Chrome");
         commonBtns.enablestatusNotSaved();
         commonBtns.clickbtnApply();
         commonBtns.enablestatusSaved();

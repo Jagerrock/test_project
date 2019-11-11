@@ -19,12 +19,12 @@ public class ReceiversList {
     @FindBy(xpath = "//*[@id='descp']")
     private WebElement description;
 
-    public ReceiversList sendKeystitle(String a){
+    public ReceiversList sendKeysReceiversListTitle(String a){
         title.sendKeys(a);
         return this;
     }
 
-    public ReceiversList sendKeysdescription(String a){
+    public ReceiversList sendKeysReceiversListDescription(String a){
         description.sendKeys(a);
         return this;
     }

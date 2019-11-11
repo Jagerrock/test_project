@@ -67,4 +67,10 @@ public class TopMenuSteps extends BaseTest {
         meetingsElements.clicknewParticipant();
         commonMethods.switchToChildWindowToFrame();
     }
+
+    public void navigateToNewReceiversList(){
+        topMenu.clicktopmenuNew();
+        topMenu.clicktopmenuNewReceiversList();
+        commonMethods.switchToChildWindowToFrame();
+    }
 }
