@@ -4,13 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pageobjects.BasePage;
+import pageobjects.search.Object;
 
-public class ArticleProperties {
-    private WebDriver driver;
+public class ArticleProperties extends BasePage {
 
     public ArticleProperties(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
+        super(driver);
     }
 
     @FindBy(xpath = "//*[@id='descp1']")
@@ -55,12 +55,12 @@ public class ArticleProperties {
     @FindBy(xpath = "//*[@id='UserControl_statusID']/div/button/div/div/div")
     private WebElement articleStatus;
 
-    public ArticleProperties sendKeysarticleDesignation(Object a){
-        articleDesignation.sendKeys((CharSequence) a);
+    public ArticleProperties sendKeysarticleDesignation(String a){
+        articleDesignation.sendKeys(a);
         return this;
     }
-    public ArticleProperties sendKeysarticleDescription(){
-        articleDescription.sendKeys("WebDriver_Chrome");
+    public ArticleProperties sendKeysarticleDescription(String a){
+        articleDescription.sendKeys(a);
         return this;
     }
 }

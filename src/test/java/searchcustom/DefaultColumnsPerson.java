@@ -32,7 +32,7 @@ public class DefaultColumnsPerson {
         Authentication auth = new Authentication(driver);
         SearchPerson searchPerson = new SearchPerson(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

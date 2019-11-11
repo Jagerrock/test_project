@@ -32,7 +32,7 @@ public class DefaultColumnsDeed {
         Authentication auth = new Authentication(driver);
         SearchDeed searchDeed = new SearchDeed(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

@@ -32,7 +32,7 @@ public class DefaultColumnsCompany {
         Authentication auth = new Authentication(driver);
         SearchCompany searchCompany = new SearchCompany(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

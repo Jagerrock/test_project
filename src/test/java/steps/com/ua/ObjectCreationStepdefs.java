@@ -1,5 +1,8 @@
 package steps.com.ua;
 
+import org.openqa.selenium.WebDriver;
+import pageobjects.BasePage;
+import pageobjects.BaseTest;
 import pageobjects.authentication.Authentication;
 import pageobjects.commonmethods.CommonMethods;
 import cucumber.api.java.en.Given;
@@ -10,40 +13,29 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import pageobjects.objects.CommonBtns;
 import pageobjects.objects.article.ArticleProperties;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pageobjects.topmenu.TopMenu;
 
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 
-public class ObjectCreationStepdefs {
-    private WebDriver driver;
-    private StringBuffer verificationErrors = new StringBuffer();
-    Authentication auth;
-    CommonMethods commonMethods;
-    ArticleProperties articleElements;
-    CommonBtns commonBtns;
-    TopMenu topMenu;
+public class ObjectCreationStepdefs extends BaseTest {
 
 
-    @Before("@Test1")
-    public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-    }
+
+    @Before("Test1")
 
     @Given("Navigation to the project")
     public void navigationToTheProject() {
-        auth = new Authentication(driver);
-        commonMethods = new CommonMethods(driver);
-        driver.get(commonMethods.baseUrl());
+        Authentication auth = new Authentication(getDriver());
+        CommonMethods commonMethods = new CommonMethods(getDriver());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 
-        if (driver.getCurrentUrl().equals("https://vm-pld-49.pld2.local/adfs/ls")) {
+        if (auth.checkAuth()) {
             auth.sendKeysLogin();
             auth.sendKeysPassword();
             auth.clickbtnSignIn();
@@ -54,9 +46,9 @@ public class ObjectCreationStepdefs {
     public void youFillInAllTheDataAndClickOK(DataTable table) {
         List data = table.row(0);
 
-        articleElements = new ArticleProperties(driver);
-        topMenu = new TopMenu(driver);
-
+        ArticleProperties articleElements = new ArticleProperties(getDriver());
+        TopMenu topMenu = new TopMenu(getDriver());
+        CommonMethods commonMethods = new CommonMethods(getDriver());
         topMenu.clicktopmenuNew();
         topMenu.clicktopmenuNewArticle();
 
@@ -69,25 +61,16 @@ public class ObjectCreationStepdefs {
 
     @Then("The object has been created")
     public void theObjectHasBeenCreated() {
-        commonBtns = new CommonBtns(driver);
+        CommonBtns commonBtns = new CommonBtns(getDriver());
+        CommonMethods commonMethods = new CommonMethods(getDriver());
         commonBtns.enablestatusNotSaved();
         commonBtns.clickbtnApply();
         commonBtns.enablestatusSaved();
         commonBtns.clickbtnOk();
 
-        driver.close();
+        getDriver().close();
         commonMethods.childWindowCloseCheck();
     }
-
-    @After("@Test1")
-    public void tearDown() throws Exception {
-        driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
-    }
-
 
 }
 

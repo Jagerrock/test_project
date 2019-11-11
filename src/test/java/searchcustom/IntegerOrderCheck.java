@@ -33,7 +33,7 @@ public class IntegerOrderCheck {
         SearchArticle searchArticle = new SearchArticle(driver);
         CommonBtns commonBtns = new CommonBtns(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

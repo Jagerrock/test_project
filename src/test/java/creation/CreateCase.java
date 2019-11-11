@@ -1,5 +1,5 @@
 package creation;
-
+import pageobjects.BaseTest;
 import pageobjects.commonmethods.CommonMethods;
 import pageobjects.objects.CommonBtns;
 import pageobjects.objects.usualcase.CaseProperties;
@@ -10,60 +10,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageobjects.topmenu.TopMenu;
 import pageobjects.authentication.Authentication;
+import steps.GeneralSteps;
+import steps.ObjectSteps;
+import steps.TopMenuSteps;
+
 import static org.junit.Assert.fail;
-
-public class CreateCase {
-    private WebDriver driver;
-    private StringBuffer verificationErrors = new StringBuffer();
-
-    @Before
-    public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-    }
+public class CreateCase extends BaseTest {
+    GeneralSteps generalSteps = new GeneralSteps();
+    TopMenuSteps topMenuSteps = new TopMenuSteps();
+    ObjectSteps objectSteps = new ObjectSteps();
 
     @Test
-    public void testCreateAndSearchCase() throws Exception {
-        CommonMethods commonMethods = new CommonMethods(driver);
-        CaseProperties caseElements = new CaseProperties(driver);
-        CommonBtns commonBtns = new CommonBtns(driver);
-        TopMenu topMenu = new TopMenu(driver);
-        Authentication auth = new Authentication(driver);
-
-        driver.get(commonMethods.baseUrl());
-        commonMethods.windowMaximize();
-        commonMethods.implicitWait();
-
-        if(driver.getCurrentUrl().equals("https://vm-pld-49.pld2.local/adfs/ls")){
-            auth.sendKeysLogin();
-            auth.sendKeysPassword();
-            auth.clickbtnSignIn();
-        }
-
-        topMenu.clicktopmenuNew();
-        topMenu.clicktopmenuNewUsualCase();
-
-        commonMethods.switchToChildWindowToFrame();
-
-        caseElements.sendKeysusualcaseTitle("Case_creation_and_search_by_Oleh");
-        caseElements.sendKeysusualcaseDescription("WebDriver_Chrome");
-
-        commonBtns.enablestatusNotSaved();
-        commonBtns.clickbtnApply();
-        commonBtns.enablestatusSaved();
-        commonBtns.clickbtnOk();
-
-        driver.close();
-        commonMethods.childWindowCloseCheck();
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
+    public void testCreateCase() throws Exception {
+        generalSteps.loginAndGoToSite();
+        topMenuSteps.navigateToNewCase();
+        objectSteps.fillInCaseDataAndSave();
     }
 }

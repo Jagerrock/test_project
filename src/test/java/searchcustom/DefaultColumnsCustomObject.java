@@ -32,7 +32,7 @@ public class DefaultColumnsCustomObject {
         Authentication auth = new Authentication(driver);
         SearchCustomObject searchCustomObject = new SearchCustomObject(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

@@ -32,7 +32,7 @@ public class DefaultColumnsDocument {
         Authentication auth = new Authentication(driver);
         SearchDocument searchDocument = new SearchDocument(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

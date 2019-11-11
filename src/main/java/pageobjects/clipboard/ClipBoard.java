@@ -4,13 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pageobjects.BasePage;
 
-public class ClipBoard {
-    private WebDriver driver;
+public class ClipBoard extends BasePage {
 
     public ClipBoard (WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
+        super(driver);
     }
 
     @FindBy(xpath = "//*[@id='childObjectListContainer']/div[1]/table/tbody/tr/td[3]/div/img")

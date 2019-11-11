@@ -32,7 +32,7 @@ public class DefaultColumnsJournalizedCase {
         Authentication auth = new Authentication(driver);
         SearchJournalizedCase searchJournalizedCase = new SearchJournalizedCase(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

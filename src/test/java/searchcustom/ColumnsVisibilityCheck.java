@@ -30,7 +30,7 @@ public class ColumnsVisibilityCheck {
         Search search = new Search(driver);
         Authentication auth = new Authentication(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

@@ -30,7 +30,7 @@ public class FolderViewVisibilityCheck {
         CommonSearchBtnsAndFields searchBtns = new CommonSearchBtnsAndFields(driver);
         Authentication auth = new Authentication(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 
@@ -42,7 +42,7 @@ public class FolderViewVisibilityCheck {
 
         commonMethods.switchToMainFrame();
         commonMethods.switchToFolderTreeFrame();
-        commonBtns.clickfolder1();
+        commonBtns.clickfolder();
 
         driver.switchTo().defaultContent();
 

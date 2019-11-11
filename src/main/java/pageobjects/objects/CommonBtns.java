@@ -5,14 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pageobjects.BasePage;
 
-public class CommonBtns {
-    private WebDriver driver;
+public class CommonBtns extends BasePage {
 
     public CommonBtns(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-
+        super(driver);
     }
 
     @FindBy(xpath = "//*[@id='btnSave']")
@@ -31,7 +29,7 @@ public class CommonBtns {
     private WebElement statusSaved;
 
     @FindBy(xpath = "//*[@id='treeContainer']/ul/li[2]/span[3]/span")
-    private WebElement folder1;
+    private WebElement folder;
 
     public CommonBtns clickbtnOk(){
         btnOk.click();
@@ -43,8 +41,8 @@ public class CommonBtns {
         return this;
     }
 
-    public CommonBtns clickfolder1(){
-        folder1.click();
+    public CommonBtns clickfolder(){
+        folder.click();
         return this;
     }
 

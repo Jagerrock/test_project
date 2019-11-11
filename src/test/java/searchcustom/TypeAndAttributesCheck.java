@@ -33,7 +33,7 @@ public class TypeAndAttributesCheck {
         SearchArticle searchArticle = new SearchArticle(driver);
         CommonSearchBtnsAndFields commonSearchBtnsAndFields = new CommonSearchBtnsAndFields(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

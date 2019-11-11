@@ -31,7 +31,7 @@ public class CreateReceiversList {
         TopMenu topMenu = new TopMenu(driver);
         Authentication auth = new Authentication(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 
@@ -59,12 +59,4 @@ public class CreateReceiversList {
 
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
-    }
 }

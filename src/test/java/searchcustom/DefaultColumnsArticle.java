@@ -32,7 +32,7 @@ public class DefaultColumnsArticle {
         Authentication auth = new Authentication(driver);
         SearchArticle searchArticle = new SearchArticle(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

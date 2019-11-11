@@ -30,7 +30,7 @@ public class DeedListVisibilityCheck {
         CommonSearchBtnsAndFields searchBtns = new CommonSearchBtnsAndFields(driver);
         Authentication auth = new Authentication(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

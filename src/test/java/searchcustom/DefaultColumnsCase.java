@@ -32,7 +32,7 @@ public class DefaultColumnsCase {
         Authentication auth = new Authentication(driver);
         SearchCase searchCase = new SearchCase(driver);
 
-        driver.get(commonMethods.baseUrl());
+        commonMethods.navigateToSite();
         commonMethods.windowMaximize();
         commonMethods.implicitWait();
 

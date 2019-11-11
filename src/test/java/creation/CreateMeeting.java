@@ -1,79 +1,20 @@
 package creation;
 
-import pageobjects.commonmethods.CommonMethods;
-import pageobjects.objects.CommonBtns;
-import pageobjects.objects.meeting.MeetingProperties;
-import pageobjects.meetings.Meetings;
-import org.junit.After;
-import org.junit.Before;
+import pageobjects.BaseTest;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pageobjects.topmenu.TopMenu;
-import pageobjects.authentication.Authentication;
+import steps.GeneralSteps;
+import steps.ObjectSteps;
+import steps.TopMenuSteps;
 
-import static org.junit.Assert.fail;
-
-public class CreateMeeting {
-    private WebDriver driver;
-    private StringBuffer verificationErrors = new StringBuffer();
-
-    @Before
-    public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-    }
+public class CreateMeeting extends BaseTest {
+    GeneralSteps generalSteps = new GeneralSteps();
+    TopMenuSteps topMenuSteps = new TopMenuSteps();
+    ObjectSteps objectSteps = new ObjectSteps();
 
     @Test
-    public void testCreateAndSearchMeeting() throws Exception {
-        CommonMethods commonMethods = new CommonMethods(driver);
-        MeetingProperties meetingElements = new MeetingProperties(driver);
-        Meetings meetingsElements = new Meetings(driver);
-        CommonBtns commonBtns = new CommonBtns(driver);
-        TopMenu topMenu = new TopMenu(driver);
-        Authentication auth = new Authentication(driver);
-
-        driver.get(commonMethods.baseUrl());
-        commonMethods.windowMaximize();
-        commonMethods.implicitWait();
-
-
-        if(driver.getCurrentUrl().equals("https://vm-pld-49.pld2.local/adfs/ls")){
-            auth.sendKeysLogin();
-            auth.sendKeysPassword();
-            auth.clickbtnSignIn();
-        }
-
-        topMenu.clicktopmenuMeetings();
-        topMenu.clicktopmenuMeetingsMM();
-
-        commonMethods.switchToMainFrame();
-
-        meetingsElements.clicknewMeeting();
-
-        commonMethods.switchToChildWindowToFrame();
-
-        meetingElements.clickEnterInstance();
-        Thread.sleep(500);
-        meetingElements.SendKeysDescription("Meeting_creation_and_search_by_Oleh");
-
-        commonBtns.enablestatusNotSaved();
-        commonBtns.clickbtnApply();
-        commonBtns.enablestatusSaved();
-        commonBtns.clickbtnOk();
-
-        driver.close();
-        commonMethods.childWindowCloseCheck();
-
+    public void testCreateMeeting() throws Exception {
+        generalSteps.loginAndGoToSite();
+        topMenuSteps.navigateToNewMeeting();
+        objectSteps.fillInMeetingDataAndSave();
     }
-
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
-    }
-
 }

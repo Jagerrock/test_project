@@ -7,19 +7,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import pageobjects.BasePage;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class CommonMethods {
-
-    private WebDriver driver;
-
+public class CommonMethods extends BasePage {
 
     public CommonMethods(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+      super(driver);
     }
 
     public void switchToChildWindowToFrame(){
@@ -104,15 +102,38 @@ public class CommonMethods {
     }
 
     public void implicitWait(){
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        }
+        catch (NullPointerException e){
+            System.out.println("Something went wrong.");
+        }
+
     }
 
     public void windowMaximize() {
-        driver.manage().window().maximize();
+        try {
+            driver.manage().window().maximize();
+        }
+        catch (NullPointerException e){
+            System.out.println("Something went wrong.");
+        }
     }
 
-    public String baseUrl(){
-        String a = "https://vm-pld-45.i.sigmaukraine.com/Platina/framesetStandards.aspx";
-        return a;
+    public void closePage(){
+        driver.close();
+    }
+
+    public void navigateToSite(){
+        try {
+            driver.get("https://vm-pld-45.i.sigmaukraine.com/Platina/framesetStandards.aspx");
+        }
+        catch (NullPointerException e){
+            System.out.println("Something went wrong.");
+        }
+    }
+
+    public void switchToDefaultContent(){
+        driver.switchTo().defaultContent();
     }
 }
