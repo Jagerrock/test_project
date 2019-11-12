@@ -73,4 +73,66 @@ public class TopMenuSteps extends BaseTest {
         topMenu.clicktopmenuNewReceiversList();
         commonMethods.switchToChildWindowToFrame();
     }
+
+    public void navigateToSearchArticle(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchArticle();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
+
+    public void navigateToSearchCase(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchCase();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
+    public void navigateToSearchCompany(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchCompany();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
+    public void navigateToSearchDeed(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchDeed();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
+    public void navigateToSearchDocument(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchDocument();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
+    public void navigateToSearchInstance(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchInstance();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
+    public void navigateToSearchJournalizedCase(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchJournalizedCase();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
+    public void navigateToSearchObject(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchObject();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
+
+    public void navigateToSearchParticipant(){
+        topMenu.clicktopmenuMeetings();
+        topMenu.clicktopmenuMeetingsPM();
+        commonMethods.switchToMainFrame();
+    }
+    public void navigateToSearchReceiversList(){
+        topMenu.clicktopmenuSeach();
+        topMenu.clicktopmenuSearchReceiversList();
+        commonMethods.switchToMainFrame();
+        commonMethods.switchToSearchFrame();
+    }
 }

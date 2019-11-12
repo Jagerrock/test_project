@@ -46,8 +46,8 @@ public class SearchReceiversList {
         commonMethods.switchToMainFrame();
         commonMethods.switchToSearchFrame();
 
-        rlSearch.sendKeystitle("Recievers_list_creation_and_search_by_Oleh");
-        rlSearch.sendKeysdescription("WebDriver_Chrome");
+        rlSearch.sendKeysReceiversListTitle("Recievers_list_creation_and_search_by_Oleh");
+        rlSearch.sendKeysReceiversListDescription("WebDriver_Chrome");
 
         driver.switchTo().defaultContent();
 

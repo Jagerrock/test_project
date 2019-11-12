@@ -1,7 +1,6 @@
 package steps;
 
 import pageobjects.BaseTest;
-import pageobjects.clipboard.ClipBoard;
 import pageobjects.commonmethods.CommonMethods;
 import pageobjects.objects.CommonBtns;
 import pageobjects.objects.article.ArticleProperties;
@@ -14,7 +13,6 @@ import pageobjects.objects.mail.MailProperties;
 import pageobjects.objects.meeting.MeetingProperties;
 import pageobjects.objects.participant.ParticipantProperties;
 import pageobjects.objects.usualcase.CaseProperties;
-import pageobjects.search.Document;
 import pageobjects.search.ReceiversList;
 
 public class ObjectSteps extends BaseTest {
