@@ -58,7 +58,6 @@ public class SearchReceiversList {
 
         Assert.assertEquals("Recievers_list_creation_and_search_by_Oleh", searchBtns.getField3());
         Assert.assertEquals("WebDriver_Chrome",searchBtns.getField4());
-
         driver.close();
     }
 
